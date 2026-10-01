@@ -1,4 +1,4 @@
-# Retail & Sales Analytics: Modern Databricks dbt Pipeline
+## Retail & Sales Analytics: Modern Databricks dbt Pipeline
 
 A dbt project designed to build a modern analytics layer on top of retail and sales data in Databricks. Following the Medallion architecture, it organizes raw source tables into a structured bronze → silver → gold transformation flow to deliver business-ready reporting models.
 
