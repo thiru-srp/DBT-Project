@@ -1,15 +1,69 @@
-Welcome to your new dbt project!
+# Thiru DBT Project
 
-### Using the starter project
+A dbt project for building a modern analytics layer on top of retail and sales data in Databricks. This project organizes raw source tables into a clear bronze → silver → gold transformation flow, helping turn operational data into business-ready reporting models.
 
-Try running the following commands:
-- dbt run
-- dbt test
+## Project overview
 
+The data model covers core retail entities such as sales, returns, customers, products, stores, dates, and item metadata. It is structured to support analytics, KPI reporting, and data quality validation in a scalable dbt workflow.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Architecture
+
+- Bronze layer: raw and lightly structured data sourced from operational tables
+- Silver layer: cleaned and joined business logic for downstream analysis
+- Gold layer: curated reporting and aggregated metrics
+- Seeds: reference and lookup data used during transformation
+- Tests: quality checks to validate assumptions and data integrity
+
+## Source data
+
+The project loads data from the following source tables:
+
+- fact_sales
+- fact_returns
+- dim_date
+- dim_store
+- dim_product
+- dim_customer
+- items
+
+## Key project structure
+
+```text
+thiru_dbt_project/
+├── dbt_project.yml
+├── profiles.yml
+├── models/
+│   ├── bronze/
+│   ├── silver/
+│   ├── gold/
+│   └── source/
+├── macros/
+├── seeds/
+├── snapshots/
+├── tests/
+├── analyses/
+└── target/
+```
+
+## Example dbt workflow
+
+```bash
+cd thiru_dbt_project
+dbt debug
+dbt run
+dbt test
+```
+
+This project is configured to use a Databricks profile and is designed for local dbt execution against a Databricks warehouse or SQL endpoint.
+
+## Data quality
+
+The project includes validation checks to catch issues such as negative values and inconsistent derived measures, ensuring the warehouse tables remain reliable for reporting use cases.
+
+## Notes
+
+This repository is intended for analytics and reporting use cases and demonstrates a practical dbt implementation for retail data modeling and transformation.
+
+---
+
+For more details, explore the dbt models and configuration files in the project folder.

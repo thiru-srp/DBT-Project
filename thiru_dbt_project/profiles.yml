@@ -7,7 +7,7 @@ thiru_dbt_project:
       schema: default
       threads: 1
       token: dapid0661d3ad952d022441379ef46b4930e
-      type: databricks
+      type: databricks 
     prod:
       catalog: dbt_project_prod
       host: dbc-99ce3156-13d9.cloud.databricks.com
