@@ -8,6 +8,14 @@ thiru_dbt_project:
       threads: 1
       token: dapid0661d3ad952d022441379ef46b4930e
       type: databricks
+    prod:
+      catalog: dbt_project_prod
+      host: dbc-99ce3156-13d9.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/8a13aa139056c1d5
+      schema: default
+      threads: 1
+      token: dapid0661d3ad952d022441379ef46b4930e
+      type: databricks    
   target: dev
 
 
